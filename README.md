@@ -1,4 +1,4 @@
-# ALGORITHMS.
+# DSA
 
 1. **Sorting Algorithms**:
    - **Bubble Sort**: Imagine sorting a deck of cards by repeatedly swapping adjacent cards if they're in the wrong order.
