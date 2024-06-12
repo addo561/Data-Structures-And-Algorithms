@@ -50,3 +50,48 @@ def build_product_tree():
 
 if __name__ == '__main__':
     build_product_tree()
+    
+    
+    
+#different approach
+
+class bTree:
+    def __init__(self,data):
+        self.data = data  
+        self.left = None
+        self.right = None
+        
+    def pre_orderTraversal(self,Node): 
+        result= []
+        def helper(Node):
+            if Node is None:
+                return
+            result.append(Node.data)
+            helper(Node.left)
+            helper(Node.right)   
+        helper(Node) 
+        print(result)
+                   
+
+
+root = bTree('R')  
+nodeA = bTree('A')
+nodeB = bTree('B')
+nodeC = bTree('C')
+nodeD = bTree('D')
+nodeE = bTree('E')
+nodeF = bTree('F')
+nodeG = bTree('G')
+
+
+root.left = nodeA
+root.right = nodeB
+
+nodeA.left = nodeC
+nodeA.right = nodeD
+
+nodeB.left = nodeE
+nodeB.right = nodeF
+
+nodeF.left = nodeG
+print("root.right.left.data:", root.right.left.data)
