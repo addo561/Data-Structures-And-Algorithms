@@ -94,4 +94,4 @@ nodeB.left = nodeE
 nodeB.right = nodeF
 
 nodeF.left = nodeG
-print("root.right.left.data:", root.right.left.data)
+#print("root.right.left.data:", root.right.left.data)
