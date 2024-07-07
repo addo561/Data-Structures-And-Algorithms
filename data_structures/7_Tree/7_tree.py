@@ -95,3 +95,38 @@ nodeB.right = nodeF
 
 nodeF.left = nodeG
 #print("root.right.left.data:", root.right.left.data)
+
+
+# Array implementation of Tree
+binary_tree_array =  ['R', 'A', 'B', 'C', 'D', 'E', 'F', None, None, None, None, None, None, 'G']
+
+
+def left_child_index(index):
+    return 2 * index + 1
+
+def right_child_index(index):
+    return 2 * index + 2
+
+def get_data(index):
+    if 0<= index < len(binary_tree_array):
+        return binary_tree_array[index]
+    return None 
+
+def inorder_traversal(index):
+    if index >= len(binary_tree_array) or binary_tree_array[index] is None:
+        return []
+    return inorder_traversal(left_child_index(index)) + [binary_tree_array[index]] + inorder_traversal(right_child_index(index)) 
+
+def preorder_traversal(index):
+    if index >= len(binary_tree_array) or binary_tree_array[index] is None:
+        return []
+    return   [binary_tree_array[index]] +  preorder_traversal(left_child_index(index))+ preorder_traversal(right_child_index(index))   
+
+def postorder_traversal(index):
+    if index >= len(binary_tree_array) or binary_tree_array[index] is None:
+        return []
+    return   postorder_traversal(left_child_index(index)) + postorder_traversal(right_child_index(index)) + [binary_tree_array[index]] 
+
+right_child = right_child_index(0)
+left_child_of_right_child = left_child_index(right_child)
+data = get_data(left_child_of_right_child)       
