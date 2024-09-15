@@ -34,3 +34,8 @@ def delete_Node(array,num):
 
     if i<len(array):
         heapify(array,len(array),i)           
+
+
+#MaxHeap(array, size)
+ # loop from the first index of non-leaf node down to zero
+ #   call heapify       
