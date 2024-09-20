@@ -107,13 +107,15 @@ def print_connections(matrix,vertices):
         for j in range(len(vertices)):
             if matrix[i][j]:
                 print(vertices[j], end='')
-        print()        
+        print()      
+
+print(print_connections(Adjacency_matrix,vertexData))          
 
 class Graph:
     def __init__(self,size):
         self.adj_matrix = [[0] * size for _ in range(size)]
         self.size = size
-        self.vertex_data = [''] * size
+        self.vertex_data_Array = [''] * size
 
     def add_edge(self,u,v):
         if 0<= u < self.size and  0<= v < self.size:
@@ -122,9 +124,26 @@ class Graph:
 
     def vertex_data(self,vertex,data):
         if 0<= vertex < self.size:
-            self.vertex_data[vertex] =  data       
+            self.vertex_data_Array[vertex] =  data     
+
     def print_graph(self):
         for row in self.adj_matrix:
             print(' '.join(map(str,row)))
-        for vertex,data in enumerate(self.vertex_data):
+        for vertex,data in enumerate(self.vertex_data_Array):
             print(f'{vertex} : {data}')    
+
+
+obj = Graph(5)
+obj.add_edge(2,1)
+obj.add_edge(1,1)
+obj.add_edge(0,0)
+obj.add_edge(2,2)
+obj.add_edge(1,0)
+obj.vertex_data(0,'A')
+obj.vertex_data(1,'B')
+obj.vertex_data(2,'C')
+obj.vertex_data(3,'D')
+obj.vertex_data(4,'E')
+
+
+obj.print_graph()            
