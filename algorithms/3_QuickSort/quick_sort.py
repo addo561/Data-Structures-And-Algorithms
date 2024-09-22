@@ -31,6 +31,24 @@ def partition(elements, start, end):
     return end
 
 
+
+#example 2
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    less = []
+    greater = []
+    for value in arr[1:]:
+        if value <= pivot:
+            less.append(value)
+        greater.append(value)  
+    return quick_sort(less) + [pivot] + quick_sort(greater)      
+    
+
+
+
+
 if __name__ == '__main__':
     elements = [11,9,29,7,2,15,28]
     # elements = ["mona", "dhaval", "aamir", "tina", "chang"]
