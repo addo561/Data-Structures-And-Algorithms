@@ -29,7 +29,7 @@ def delete_Node(array,num):
     for i in range(size):
         if array[i] == num:
             break 
-    array[i],array[-1] = array[-1].array[i]
+    array[i],array[-1] = array[-1],array[i]
     array.pop()
 
     if i<len(array):
