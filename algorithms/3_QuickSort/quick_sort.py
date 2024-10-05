@@ -51,7 +51,6 @@ def quicksort(arr):
 
 if __name__ == '__main__':
     elements = [11,9,29,7,2,15,28]
-    # elements = ["mona", "dhaval", "aamir", "tina", "chang"]
     quick_sort(elements, 0, len(elements)-1)
     print(elements)
 
