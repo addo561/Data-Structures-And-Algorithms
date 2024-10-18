@@ -40,7 +40,7 @@ def serve_orders():
         time.sleep(2)
 
 if __name__ == '__main__':
-    orders = ['pizza','samosa','pasta','biryani','burger']
+    orders = ['pizza','rice','pasta','burger']
     t1 = threading.Thread(target=place_orders, args=(orders,))
     t2 = threading.Thread(target=serve_orders)
 
