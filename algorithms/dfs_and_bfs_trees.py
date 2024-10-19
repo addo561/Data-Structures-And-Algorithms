@@ -54,6 +54,8 @@ def pre_order_iterative(node):
     if node.right: stk.append(node.right)
     if node.left: stk.append(node.left)
     print(node)
+    
+    
 # Level Order Traversal (BFS) Time: O(n), Space: O(n)
 from collections import deque
 
