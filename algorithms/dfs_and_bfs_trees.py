@@ -29,18 +29,18 @@ def search_dfs(node, target):
   if node.val == target:
     return True
 
-  return search_dfs(node.left, target) or search(node.right, target)
+  return search_dfs(node.left, target) or search_dfs(node.right, target)
 
 # Time: O(log n), Space: O(log n)
-def search_bst(node, target):
+def search_bfs(node, target):
   if not node:
     return False
 
   if node.val == target:
     return True
 
-  if target < node.val: return search_bst(node.left, target)
-  else: return search_bst(node.right, target)
+  if target < node.val: return search_bfs(node.left, target)
+  else: return search_bfs(node.right, target)
 
 
 
